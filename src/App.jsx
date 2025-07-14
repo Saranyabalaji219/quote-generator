@@ -4,6 +4,7 @@ import Randomquote from './components/Randomquote'
 const App = () => {
   return (
     <div>
+      {/* this is main branch */}
       {/* This is random quote generator */}
       <Randomquote/>
     </div>
