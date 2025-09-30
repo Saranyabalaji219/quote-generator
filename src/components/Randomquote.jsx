@@ -41,7 +41,48 @@ const Randomquote = () => {
   {
     text: "Push yourself, because no one else is going to do it for you.",
     author: "Unknown"
+  },
+  {
+    text: "Believe you can and you're halfway there.",
+    author: "Theodore Roosevelt"
+  },
+  {
+    text: "Act as if what you do makes a difference. It does.",
+    author: "William James"
+  },
+  {
+    text: "Hustle in silence and let your success make the noise.",
+    author: "Unknown"
+  },
+  {
+    text: "Don’t be afraid to give up the good to go for the great.",
+    author: "John D. Rockefeller"
+  },
+  {
+    text: "Hard times don’t create heroes. It is during the hard times when the 'hero' within us is revealed.",
+    author: "Bob Riley"
+  },
+  {
+    text: "Opportunities don't happen, you create them.",
+    author: "Chris Grosser"
+  },
+  {
+    text: "Do what you can with all you have, wherever you are.",
+    author: "Theodore Roosevelt"
+  },
+  {
+    text: "Everything you’ve ever wanted is on the other side of fear.",
+    author: "George Addair"
+  },
+  {
+    text: "Start where you are. Use what you have. Do what you can.",
+    author: "Arthur Ashe"
+  },
+  {
+    text: "Don’t limit your challenges. Challenge your limits.",
+    author: "Unknown"
   }
+
 ];
 
     
@@ -59,8 +100,8 @@ const Randomquote = () => {
  
       <div className="container">
 
-        <div className="quote">
-            {quote.text}
+        <div className="quote" key={quote.text}>
+          {quote.text}
         </div>
 
         <div className="line">
@@ -71,8 +112,13 @@ const Randomquote = () => {
             <div className="author">{quote.author}</div>
 
             <div className="icons">
-                <img src="https://cdn-icons-png.flaticon.com/256/124/124021.png"  alt="" />
-                <img src="https://img.icons8.com/ios11/512/FFFFFF/refresh.png" onClick={()=>{random()}} alt="" />
+           <a 
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}" - ${quote.author}`)}`} 
+              target="_blank" rel="noopener noreferrer" >
+           <img 
+            src="https://cdn-icons-png.flaticon.com/256/124/124021.png"  
+             alt="Tweet this quote"/> </a>
+            <img src="https://img.icons8.com/ios11/512/FFFFFF/refresh.png" onClick={()=>{random()}} alt="" />
             </div>
 
         </div>
